@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>How to culculate down Payment</title>
+    <script>
+        /* Defining Table
+        * Input: cost of the home
+        * Processing: Culculate acording to the given formula using the inpute
+        * Output: Down Payment
+        */
+        function myDownPayment() {
+            let cost = parseInt(document.getElementById("housecostInputBox").value);
+            let downpayment;
+            if (cost <= 49999.99) {
+                downpayment=(cost * 0.05);
+            } else if(cost<=99999.99) {
+                downpayment=(2000 + (0.1*(cost-50000)));
+            } else if (cost<=199999.99) {
+                downpayment=(7500 + (0.2*(cost-100000)));
+            } else {
+            downpayment=(27500 + (0.25*(cost-200000)));
+            }
+                document.getElementById("outputDiv").innerHTML = downpayment;
+            }
+    </script>
+</head>
+<body>
+    <h1> This will lead you to down payment</h1>
+    Enter cost of the house: <input type="text" id="housecostInputBox"><br>
+    <button type="button" onclick="myDownPayment()">Down Payment</button>
+    <div id="outputDiv"> </div>
+</body>
+</html>

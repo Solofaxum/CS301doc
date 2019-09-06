@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title> Discount of the day</title>
+    <script>
+        /* Defining Table
+        * Input: customers subtotal
+        * Processing: subtruct 10% from subtotal for the discount for the selected days, and add 6% to the result to get the amount due 
+        * Output: the total amount due
+        */
+        function theDiscountDays() {
+            let subtotal = parseFloat(document.getElementById("subtotalInputBox").value);
+            let dayOfWeek = new Date().getDay();
+
+            let revisedSubTotal;
+            let outcome;
+            if ((subtotal > 50) && ((dayOfWeek === 2) || (dayOfWeek === 3))) {
+                subtotal-=(subtotal*0.1);
+            }
+                outcome= subtotal + (subtotal * 0.06)
+                document.getElementById("outputDiv").innerHTML =outcome ;
+            }
+    </script>
+</head>
+<body>
+    <h1> Discount Calculation</h1>
+    What is your subtotal today: <input type="text" id="subtotalInputBox"><br>
+    <button type="button" onclick="theDiscountDays()"> Push here to know</button>
+    <div id="outputDiv"> </div>
+</body>
+</html>

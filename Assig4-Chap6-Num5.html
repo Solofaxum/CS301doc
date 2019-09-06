@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <!--input= Status and over due dates -->
+    <!-- process= check status, check overdue dates, calculate the allowed borowing date -->
+    <!-- out put = allowed borowing date -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>Library Books borowing Privilage</title>
+    <script>
+        function PrivilageCheack(){
+        let status = document.getElementById("statusA").value;
+        let overdue =parseInt( document.getElementById("overdueA").value);
+        let borowingDay;
+        if (status === "student"){
+            if(overdue === 0){
+                borowingDay = 6}
+                else if (overdue < 3 && overdue> 0){
+                 borowingDay = 4 }
+                 else if(overdue >=3){
+                     borowingDay =2}
+                 }
+        if (status === "faculty"){
+            if(overdue === 0){
+                borowingDay = 16}
+                else if (overdue < 3 && overdue>0){
+                 borowingDay = 12 }
+                 else if(overdue >=3){
+                     borowingDay =8}
+                 }           
+        if (status ==="other"){
+            if(overdue === 0){
+                borowingDay = 4}
+                else if (overdue < 3 && overdue>0){
+                 borowingDay = 3 }
+                 else if(overdue >=2){
+                     borowingDay =2}
+                 }
+        document.getElementById("feedback").innerHTML= borowingDay;
+                }  
+    </script>
+    </head>
+   </body>
+        Status of the customeer:<input type= "text" id= "statusA">
+        Overdue dates : <input type = "text" id = "overdueA">
+        <button type="button" onclick = "PrivilageCheack()">Borowing Dates</button>
+        <div id="feedback"></div>
+    </body>
+   </html>

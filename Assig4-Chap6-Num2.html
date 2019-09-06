@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Shoes Selection</title>
+    <script>
+        /*  -input: weather of the day;
+            - processing: entering the weather of the day and working by if else conditional statements
+            - output: slecting type of shoe.
+         
+        */
+        function choose_foot() {
+         let weather =document.getElementById('inputbox').value;
+            let message;
+            if (weather ==='hot' ) {
+                message = ('sandals');
+            }
+            else if (weather ==='rain') {
+                message = ('galoshes');
+            }
+            else if (weather ==='snow') {
+                message =('boots');
+            }
+            else {
+                message = ('Shoes');
+            }
+            document.getElementById('outputDiv').innerHTML= "Wear" +" " + message +" "+ "shoes.";
+        }
+        
+ 
+    </script>
+</head>
+<body>
+
+    Enter weather :<br>
+    <input type="text" id ='inputbox'><br>
+    <button type="button" onclick="choose_foot()"> Type of shoes</button>
+    <div id='outputDiv'></div>
+</body>
+
+</html>

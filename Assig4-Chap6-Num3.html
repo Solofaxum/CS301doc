@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title> School Year</title>
+    <script>
+        /* Defining Table
+        * Input: Name of students and complited university creadit
+        * Processing: much the creadite with years in school
+        * Output: Students name and year in schools
+        */
+        function mySchoolYear() {
+            let studentName = document.getElementById("fullNameInputBox").value;
+            let schoolCredits= parseInt(document.getElementById("schoolCreditInputBox").value);
+            let yearInSchool;
+            if ( schoolCredits < 30) {
+                yearInSchool=("freshman");
+            } else if(schoolCredits< 60) {
+                yearInSchool=("sophomore");
+            } else if (schoolCredits<90) {
+                yearInSchool=("junior");
+            } else {
+                yearInSchool=("senior");
+            }
+            let final= studentName + ", is " + yearInSchool;
+                document.getElementById("outputDiv").innerHTML = final;
+            }
+    </script>
+</head>
+<body>
+    <h1> What is your School Level?</h1>
+    Enter your first Name: <input type="text" id="fullNameInputBox" size="30"><br>
+    How many Creadits Did You Take: <input type="text" id="schoolCreditInputBox"><br>
+    <button type="button" onclick="mySchoolYear()"> Push here to know</button>
+    <div id="outputDiv"> </div>
+</body>
+</html>

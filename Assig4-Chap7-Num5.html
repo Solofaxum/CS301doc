@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf 8">
+    <title></title>
+    <script>
+        /*   - input: child's age and seasons
+             - processing: 
+             - output: Determing Child's bed time 
+        */
+        function bedtime() {
+            let season = document.getElementById('seasoninput').value;
+            let age = parseInt(document.getElementById('ageinput').value);
+            
+            let bedtime;
+            if (((season === 'summer') || (season === 'fall')) && (age <= 5)) {
+                bedtime = '8:30 p.m';}
+             else if (((season === 'winter') || (season === 'spring')) && (age <= 5)) {
+                bedtime = '8:00 p.m';
+            }
+             if ((season === 'summer') && (age >= 6 && age <= 12)) {
+                bedtime = "9:30 p.m";
+            }
+            else if (((season === 'winter') || (season === 'spring') || (season === 'fall')) && (age >= 6 && age <= 12)) {
+                bedtime = '8:30 p.m';
+            }
+          if ((season === 'summer') && (age >= 13)) {
+                bedtime = '10:30 p.m';
+            }
+           else if (((season === 'winter') || (season === 'spring') || (season === 'fall')) && (age >= 13)) {
+                bedtime = '9:30 p.m';
+            }
+            // else {
+            //     bedtime = 'Not specified';
+            // }
+            document.getElementById('outputDiv').innerHTML = bedtime;
+        }
+
+    </script>
+</head>
+<body>
+    Enter Age and seasons: <br>
+     Season<select id="seasoninput">
+     <option selected></option>
+      <option>summer</option>
+      <option>fall</option>
+      <option>winter</option>
+      <option>spring</option>
+    </select>
+    Age <input type="text" id='ageinput'><br>
+    <button type="button" onclick='bedtime()'> Go to bed at</button>
+    <div id= 'outputDiv'></div>
+</body>
+
+</html>

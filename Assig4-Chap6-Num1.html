@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=="utf 8">
+    <title>Absolute Value</title>
+    <script>
+        /*  -input: two numbers;
+            -processing: finding the between two numbers then finding 
+            output: absolute value 
+        */
+        function absolute_value() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let dif = num1 - num2;
+            let absolute = Math.abs(dif);
+            document.getElementById('output').innerHTML = absolute;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Absolute Value</h1>
+    Enter any two numbers:<br>
+    first_number <input type="text" id='num1' size="10"><br>
+    second_number <input type="text" id='num2' size="10"><br>
+    <button type="button" onclick="absolute_value()"> Result</button>
+    <div id='output'></div>
+</body>
+
+</html>
